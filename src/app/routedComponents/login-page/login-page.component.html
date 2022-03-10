@@ -1,0 +1,16 @@
+<app-public-menu></app-public-menu>
+<div>
+        <form #myForm="ngForm">
+            <div id="usrdv">
+                <label for="name">Username:</label>
+                <input name="name" [(ngModel)]="member.name" #name="ngModel" (focusout)="storage(name.value)" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" >
+                <div *ngIf="name.invalid">Email is required</div>
+            </div>
+            <div id="psdv">
+                <label for="username">Password:</label>
+                <input name="password" [(ngModel)]="member.password" required minlength="8" #password="ngModel">
+            </div> 
+            <div *ngIf="password.invalid">Password is required</div>
+            <button type="submit" [disabled]="!myForm.valid" (click)="onClickSubmit(member)">Login!</button> 
+        </form>     
+    </div>  

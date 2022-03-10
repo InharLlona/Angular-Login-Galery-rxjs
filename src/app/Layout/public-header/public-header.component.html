@@ -1,0 +1,11 @@
+
+<div id="container">
+    <div id="icon">
+        <img src="../../../assets/images.jpg">
+        <p id="url">www.SN.es</p>
+    </div>
+    <div id="user">
+        <p id="name" *ngIf="isLogged()">{{getName()}}</p>
+        <button id="button" (click)="onClickLogout()" *ngIf="isLogged()" >Logout!</button>
+    </div>
+</div>
