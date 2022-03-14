@@ -1,1 +1,23 @@
-<p>galery-page works!</p>
+<div id="container">
+    <div>
+        <app-private-menu></app-private-menu>
+    </div>
+    <div id="pictures">
+        <img id={{pId}} src={{selectedMtn.src}}>
+        <div id="buttons">
+            <button [disabled]="pr" (click)="onChangeImage ('-')">Previous</button>
+            <button [disabled]="ul" (click)="onChangeImage ('+')">Next</button>
+            <button [disabled]="bigPic" (click)="zooming()">Zoom+</button>
+            <button [disabled]="!bigPic" (click)="zooming()">Zoom-</button>
+            <button *ngIf="!autoPlay" (click)="onAuto()">Play</button>
+            <button *ngIf="autoPlay" (click)="onAuto()">Stop</button>
+        </div>
+        <div id="minipics">
+            <button id="sbutton" (click)="onChangeImage ('-')"><</button>
+            <img *ngIf="!pr" id="minipic" (click)="onChangeImage ('-')"src="{{prevMtn.src}}" alt="">
+            <img id="cminipic" src="{{selectedMtn.src}}" alt="">
+            <img *ngIf="!ul" id="minipic" (click)="onChangeImage ('+')"src="{{nextMtn.src}}" alt="">
+            <button id="sbutton" (click)="onChangeImage ('+')">></button>
+        </div>
+    </div>
+</div>

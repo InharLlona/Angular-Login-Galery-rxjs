@@ -1,5 +1,8 @@
-<app-public-menu></app-public-menu>
-<div>
+<div id="container">
+    <div>
+        <app-public-menu></app-public-menu>
+    </div>
+    <div id="logs">
         <form #myForm="ngForm">
             <div id="usrdv">
                 <label for="name">Username:</label>
@@ -10,7 +13,8 @@
                 <label for="username">Password:</label>
                 <input name="password" [(ngModel)]="member.password" required minlength="8" #password="ngModel">
             </div> 
-            <div *ngIf="password.invalid">Password is required</div>
-            <button type="submit" [disabled]="!myForm.valid" (click)="onClickSubmit(member)">Login!</button> 
+                <div *ngIf="password.invalid">Password is required</div>
+                <button type="submit" [disabled]="!myForm.valid" (click)="onClickSubmit(member)">Login!</button> 
         </form>     
     </div>  
+</div> 

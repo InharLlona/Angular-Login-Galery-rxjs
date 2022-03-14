@@ -4,9 +4,9 @@ import {HomePageComponent} from './routedComponents/home-page/home-page.componen
 import {LoginPageComponent} from './routedComponents/login-page/login-page.component'
 import {AboutPageComponent} from './routedComponents/about-page/about-page.component'
 import {GaleryPageComponent} from './routedComponents/galery-page/galery-page.component'
-import {DashboardComponent} from './dashboard/dashboard.component'
-import { CRUDComponent } from './crud/crud.component';
-import { ProfileComponent } from './profile/profile.component';
+import {DashboardComponent} from './routedComponents/dashboard-page/dashboard.component'
+import { CRUDComponent } from './routedComponents/crud-page/crud.component';
+import { ProfileComponent } from './routedComponents/profile-page/profile.component';
 
 const routes: Routes = [
 {path:'home',component:HomePageComponent},
