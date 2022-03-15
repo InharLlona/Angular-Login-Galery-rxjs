@@ -10,7 +10,7 @@ export class PublicHeaderComponent implements OnInit {
 
   constructor(public servicesService:ServicesService) { }
  
-  isLogged(){
+isLogged(){
   return this.servicesService.isLogged();
 }
 

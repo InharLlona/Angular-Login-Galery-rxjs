@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { MemberEntity } from 'src/app/model/model'; 
 import { Router } from '@angular/router';
+import { Observable, Observer, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -8,15 +9,21 @@ import { Router } from '@angular/router';
 export class ServicesService {
 nm:string;
 lg:boolean;
-  constructor(private router: Router) { }
 
-login(ob:MemberEntity){
+constructor(private router: Router) { }
+
+login(ob:MemberEntity) : Observable<boolean>{
 if((ob.name=="master8@lemoncode.net") && (ob.password=="12345678")){
-  this.router.navigate(['/dashboard'])
   this.nm = ob.name;
+  return of(true)
+}else{return of(false)}
+}
+
+navigater = () =>{
+  this.router.navigate(['/galery']);
   this.lg = true;
 }
-}
+
 
 logout(){
   this.router.navigate(['/home']);

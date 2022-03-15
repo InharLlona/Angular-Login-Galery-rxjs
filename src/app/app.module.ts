@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+import { NgxLoadingModule } from 'ngx-loading';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,6 +19,7 @@ import { GaleryPageComponent } from './routedComponents/galery-page/galery-page.
 import { DashboardComponent } from './routedComponents/dashboard-page/dashboard.component';
 import { CRUDComponent } from './routedComponents/crud-page/crud.component';
 import { ProfileComponent } from './routedComponents/profile-page/profile.component';
+import { RotateDirective } from './directives/rotate.directive';
 
 @NgModule({
   declarations: [
@@ -30,13 +34,16 @@ import { ProfileComponent } from './routedComponents/profile-page/profile.compon
     GaleryPageComponent,
     DashboardComponent,
     CRUDComponent,
-    ProfileComponent
+    ProfileComponent,
+    RotateDirective,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    NgxLoadingModule.forRoot({})
   ],
   providers: [],
   bootstrap: [AppComponent]

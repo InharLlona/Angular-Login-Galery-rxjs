@@ -3,6 +3,7 @@
         <app-private-menu></app-private-menu>
     </div>
     <div id="pictures">
+        <span appRotate >Rotating Mountains!</span>
         <img id={{pId}} src={{selectedMtn.src}}>
         <div id="buttons">
             <button [disabled]="pr" (click)="onChangeImage ('-')">Previous</button>

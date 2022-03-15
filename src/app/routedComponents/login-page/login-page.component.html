@@ -16,5 +16,6 @@
                 <div *ngIf="password.invalid">Password is required</div>
                 <button type="submit" [disabled]="!myForm.valid" (click)="onClickSubmit(member)">Login!</button> 
         </form>     
-    </div>  
+    </div> 
+    <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '3px' }"></ngx-loading> 
 </div> 
